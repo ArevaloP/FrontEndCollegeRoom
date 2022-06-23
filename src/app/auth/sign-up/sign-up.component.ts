@@ -72,7 +72,7 @@ export class SignUpComponent implements OnInit {
 
   // On Signup link click
   onSignIn() {
-    this.router.navigateByUrl('');
+    this.router.navigateByUrl('auth');
   }
 
   ngOnInit(): void {

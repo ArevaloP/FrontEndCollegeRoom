@@ -19,6 +19,10 @@ const routes: Routes = [
       {
         path: ':id',
         component: OrdersComponent
+      },
+      {
+        path: '**',
+        redirectTo: ''
       }
     ]
   }

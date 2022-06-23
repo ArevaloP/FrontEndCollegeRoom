@@ -9,7 +9,8 @@ import { HumanResourcesComponent } from './human-resources/human-resources.compo
 
 const routes: Routes = [
   {
-    
+    path: '',
+    component: HumanResourcesComponent
   }
 ];
 
