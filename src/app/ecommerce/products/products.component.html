@@ -1,0 +1,56 @@
+
+
+<div class="wrapper" [ngClass]="{'nav-collapsed' : getSideBarState()}">
+	<app-sidebar [pantalla]="'inicio'" ></app-sidebar>
+	<app-navbar></app-navbar>
+	<div class="page-wrapper">
+		<div class="page-content-wrapper">
+			<div class="page-content">
+
+        <div class="row">
+
+
+          <div class="col-md-4" *ngFor="let product of products; let i = index">
+            <div class="card">
+
+
+              <img [src]="product.imgs" alt=""/>
+
+
+
+
+              <div class="card-body">
+                <h6 class="card-title cursor-pointer">{{product.type}}</h6>
+                <hr>
+                <div class="clearfix">
+                  <p class="mb-0 float-start"><strong></strong> {{product.address}}</p>
+                  <p class="mb-0 float-end fw-bold"><span class="me-2 text-secondary">  <strong> {{product.city}} </strong> </span></p>
+                </div>
+                <div class="clearfix">
+                  <p class="mb-0 float-start"> {{product.desc}} </p>
+                </div>
+                <div class="d-flex align-items-center mt-3 fs-6">
+                  <div class="chip" (click)="onProfile(product.user._id)">
+                    <img [src]="product.user.img" alt="Contact Person">{{product.user.name}}
+                  </div>
+                  <p class="mb-0 ms-auto">{{product.price | currency: 'COP': '$': '1.2-2'}}</p>
+                </div>
+              </div>
+
+              <div class="card-footer"> <small> {{product.date}} </small> </div>
+            </div>
+          </div>
+
+
+
+        </div>
+
+
+
+				<div class="overlay" (click)="toggleSidebar()" [ngClass]="{'show' : getSideBarState()}"></div>
+			</div>
+		</div>
+	</div>
+	<app-footer></app-footer>
+</div>
+<app-color-switcher></app-color-switcher>

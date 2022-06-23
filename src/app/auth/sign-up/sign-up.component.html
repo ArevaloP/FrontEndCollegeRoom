@@ -1,0 +1,110 @@
+<div class="bg-login">
+	<!--wrapper-->
+	<div class="wrapper">
+		<div class="d-flex align-items-center justify-content-center my-5 my-lg-0">
+			<div class="container">
+				<div class="row row-cols-1 row-cols-lg-2 row-cols-xl-2">
+					<div class="col mx-auto">
+						<div class="my-4 text-center">
+							<img src="assets/images/logo-img.png" width="180" alt="" />
+						</div>
+						<div class="card">
+							<div class="card-body">
+								<div class="border p-4 rounded">
+									<div class="text-center">
+										<h3 class="">Crear Cuenta</h3>
+										<p>¿Tienes una cuenta? <a href="JavaScript:;" (click)="onSignIn()">Inicia Sesion aquí</a>
+										</p>
+									</div>
+
+
+										<hr/>
+
+									<div class="form-body"
+                        autocomplete="off"
+                        [formGroup]="FormReactive"
+                        (ngSubmit)="signUp()" >
+
+
+
+										<form class="row g-3">
+											<div class="col-sm-6">
+												<label for="inputFirstName" class="form-label">Nombre</label>
+												<input type="text" class="form-control" id="inputFirstName"
+                                placeholder="Nombre" formControlName="name" >
+                                <small *ngIf="campoValid('name')" class="msg" > {{nameMsg}} </small>
+											</div>
+
+											<div class="col-sm-6">
+												<label for="inputLastName" class="form-label">Apellido</label>
+												<input type="text" class="form-control" id="inputLastName"
+                        placeholder="Apellido" formControlName="lastName">
+                        <small *ngIf="campoValid('lastName')" class="msg" > {{lastNameMsg}} </small>
+											</div>
+
+											<div class="col-12">
+												<label for="inputEmailAddress" class="form-label">Correo Electronico</label>
+												<input type="email" class="form-control" id="inputEmailAddress"
+                        placeholder="ejemplo@usuario.com" formControlName="email" >
+                        <small *ngIf="campoValid('email')" class="msg" > {{emailMsg}} </small>
+											</div>
+
+											<div class="col-12">
+												<label for="inputChoosePassword" class="form-label">Contraseña</label>
+												<div class="input-group" id="show_hide_password">
+													<input [type]=" hide ? 'password' : 'text' " class="form-control border-end-0"
+                          id="inputChoosePassword" formControlName="password" placeholder="Ingrese una contraseña">
+                          <a  (click)="hide = !hide" class="input-group-text bg-transparent">
+                            <i [class]="hide ? 'bx bx-hide' : 'bx bx-show' "></i></a>
+												</div>
+                        <small *ngIf="campoValid('password')" class="msg" > La contraseña debe tener mínimo 8 caracteres. </small>
+											</div>
+
+                      <div class="col-12">
+												<label for="inputTelefono" class="form-label">Telefono</label>
+												<input type="text" class="form-control"
+                        id="inputTelefono" formControlName="phone" placeholder="Telefono">
+                        <small *ngIf="campoValid('phone')" class="msg" > El teléfono debe tener 10 números y solo debe contener números. </small>
+											</div>
+
+											<div class="col-12">
+												<label for="inputCiudad" class="form-label">Ciudad</label>
+												<input type="text" class="form-control" formControlName="city" id="inputCiudad" placeholder="Ingrese su ubicacion">
+                        <small *ngIf="campoValid('city')" class="msg" > La ciudad es obligatoria. </small>
+                      </div>
+
+                      <div class="card radius-15">
+                        <div class="card-body">
+                          <div class="card-title">
+                            <h4 class="mb-0">Foto de perfil</h4>
+                          </div>
+                          <hr/>
+                          <form>
+                            <input id="image-uploadify" type="file"
+                            accept="image/*,"
+                            multiple (change)="capturarFile($event)">
+                          </form>
+                        </div>
+                      </div>
+
+											<div class="col-12">
+												<div class="d-grid">
+													<button type="submit" class="btn btn-primary" [disabled]="FormReactive.invalid"  ><i class='bx bx-user'></i>Sign up</button>
+												</div>
+											</div>
+
+										</form>
+
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--end row-->
+			</div>
+		</div>
+	</div>
+	<!--end wrapper-->
+</div>

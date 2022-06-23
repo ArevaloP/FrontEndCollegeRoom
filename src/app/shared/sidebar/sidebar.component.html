@@ -1,0 +1,34 @@
+  <!-- Sidebar Content starts -->
+<div class="sidebar sidebar-wrapper" >
+        <!-- Sidebar Header starts -->
+        <div class="sidebar-header">
+            <div>
+                <img src="assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
+            </div>
+            <div>
+                <h4 class="logo-text" style="font-size: 14px; font-weight: 600;" >COLLEGE'S ROOM</h4>
+            </div>
+            <div class="toggle-icon ms-auto"><i  (click)="toggleSidebar()"  class='bx bx-arrow-to-left'></i>
+            </div>
+        </div>
+        <!-- Sidebar Header Ends -->
+    <div class="sidebar-content" [perfectScrollbar]>
+        <ul class="navigation">
+            <!-- First level menu -->
+            <li [ngClass]="{active: pantalla === 'inicio'}">
+                <a class="cursor-pointer " (click)="onHome()">
+                    <i class="bx bxs-home"></i>
+                    <span class="menu-title">Inicio</span>
+                </a>
+            </li>
+
+            <li [ngClass]="{active: pantalla === 'perfil'}">
+              <a class="cursor-pointer" (click)="onProfile()">
+                  <i class="bx bxs-user"></i>
+                  <span class="menu-title">Perfil</span>
+              </a>
+          </li>
+        </ul>
+    </div>
+    <!-- Sidebar Content Ends -->
+</div>
